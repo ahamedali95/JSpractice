@@ -37,6 +37,10 @@ undefined means a variable has been declared but has not yet been assigned a val
 
 null means a variable has been declared and it is assigned to null representing that the value does not exist.
 
+**What is the only value in JavaScript that is not equal to itself?**
+
+NaN
+
 Describing interactions between different data types in JS.
 
 ```js
@@ -58,7 +62,7 @@ const variables can neither be redeclared nor reassigned
 
 ##  Comparison Operators
 
-### Equality Operators 
+### Equality Operators
 
 **Loose equality operator (==)** - returns true if the values are equal. It will also return true if it can perform a type conversion.
 
