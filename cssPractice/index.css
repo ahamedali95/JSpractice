@@ -1,0 +1,73 @@
+/* id selector - selects only one particular element with the id attribute matching the selector name*/
+/* type selector - selects all elements belonging to particular type */
+/* class selector - selects all elements with class attribute matching the selector name*/
+/* compound selector - selects all matched elements in the compound set i.e. h1, h2, #box { } */
+/* descendant selector - selects all direct and indirect elements of an element i.e., #hav li { } */
+/* child selector - selects all direct children of a selected element i.e., #nav > li { } */
+/* sibling selector - selects only next direct element with the matching selector name i.e., h3 + p { } */
+/* preceded selector - selects all matched elements preceding after the selector name i.e., .styleafter p { } */
+/* universal selector - style anything that has not been previously styled by anything else i.e., * { } */
+/* attribute selector - selects element based on a matching attribute value i.e., img[alt="Cat"] { } */
+/* psudo class selector - select elements based on a particular state or its relationship with other elements i.e., a:link { } */
+
+/* In CSS box model, every element can be though of a box so it contains margin, border, padding and the actual content */
+/* padding - is used to create distance between the content and the border of an element */
+/* margin - is used to add distance of a selected element and other elements of a page */
+
+/* Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices (desktops, tablets, and phones): */
+/* There are three things to follow to make a website more responsive: */
+/* 1. Adding the meta tag which designates the viewport which gives the browser instructions to use */
+/* the device dimensions and scale */
+/* 2. Adding media queries - */
+/* 3. Otherwise, using a framework such as Bootstrap or Semantic UI that offer responsive design */
+
+/* Cookies: */
+/* Way for the HTTP server to ask the client side application which is the browser to store some information */
+/* about the client and then get that data back from the browser later. */
+/* Primarily, cookies are used for log-in. They provide a way for us to remember who the client is and */
+/* then remember for their entire session. Without cookies, users have to provide username and password */
+/* on every request. */
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+* {
+  font-family: Arial;
+  color: red;
+}
+
+h1, #new-gif-form {
+  text-align: center;
+}
+
+h1:hover {
+  color: orange;
+}
+
+img, #new-gif-form {
+  margin: 0px auto;
+  width: 100px;
+}
+
+img {
+  display: block;
+  width: 400px;
+  border: 5px dotted red;
+  margin: 10px auto;
+  padding: 10px 10px;
+}
+
+#new-gif-input {
+  width: 200%;
+  height: 20px;
+  border: 1px dotted red;
+  border-radius: 5px;
+  color: red;
+  font-size: 20px;
+}
+
+#new-gif-input:focus {
+  background-color: orange;
+}
