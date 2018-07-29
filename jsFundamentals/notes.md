@@ -277,7 +277,7 @@ Class is a ES6 feature introduced to JavaScript to encase both the functionality
 For example,
 
 ```js
-class User() {
+class User {
   constructor(name, email) {
     this.name = name;
     this.email = email;
@@ -292,3 +292,88 @@ const user1 = new User("ahamed", "ahamed@usa.com");
 user1.getInfo();
 //prints "ahamed - ahamed@usa.com"
 ```
+
+**What is the difference between create and new when creating new objects?**
+
+## Keyword ```this```
+
+### Method call
+
+General rule of thumb:
+
+**If ```this``` is referenced inside a method, then ```this``` refers to the object which received the method call. Otherwise, ```this``` is global.**
+
+For example,
+
+```js
+let person = {
+  greet: function() {
+    return this;
+  }
+}
+
+person.greet()
+//returns person { }
+
+person == person.greet();
+//returns true
+```
+
+Lets makes this little complicated,
+
+```js
+let person = {
+  greet: function() {
+    return this;
+  }
+}
+
+person.greet()
+//returns person { }
+
+const func = person.greet;
+func();
+//return window object
+
+func() == person.greet();
+//return true;
+
+person == person.greet();
+//returns true
+```
+
+### Functions within Functions
+
+Note: **A method in JavaScript is a property of an object which points to a function.**
+
+```js
+let person = {
+  greet: function greeting() {
+    return function otherFunc() {
+      return this;
+    }
+  }
+}
+
+```
+
+In this above example, if we say person.greet, this will return the function greeting but not otherFunc because no property on an object points to otherFunc(), otherFunc is not a method and as this is reference in our non-method, this is global or the window.
+
+### This and Callbacks
+
+```js
+const callback = function(ele) {
+  console.log(this);
+  return ele % 2 !== 0;
+}
+
+const result = [1,2,3].filter(callback);
+console.log(result);
+//prints
+//window
+//window
+//window
+//[1,3]
+```
+
+In this example, an array is an object and a method is called on this object. And this method takes in a callback function and this callback function is not called as a property on an object. So whenever the callback function is invoked, it will print out the global object.

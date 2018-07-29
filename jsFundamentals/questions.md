@@ -80,3 +80,66 @@ Follow up: Give an example.
 Follow up: How do you create a prototype method in JavaScript?
 25. What are some ES6 features you like to use?
 26. What is the difference between the keywords new and create in terms of instantiating new objects?
+27. What is ```this``` in JavaScript?
+28. What is a method in JavaScript?
+29. What is the expected output of the following code?
+
+```js
+let person = {
+  greet: function() {
+    return this;
+  }
+}
+
+person.greet();
+person.greet() == person;
+```
+```js
+let person = {
+  greet: function() {
+    return this;
+  }
+}
+
+const func = person.greet;
+func() == person.greet();
+```
+
+```js
+let person = {
+  greet: function greeting() {
+    return function notMyFunc() {
+      return this;
+    }
+  }
+}
+
+person.greet()();
+```
+
+```js
+const callback = function(ele) {
+  console.log(this);
+  return ele % 2 !== 0;
+}
+
+const result = [1,2,3].filter(callback);
+console.log(result);
+```
+
+```js
+var myObject = {
+    foo: "bar",
+    func: function() {
+        var self = this;
+        console.log("outer func:  this.foo = " + this.foo);
+        console.log("outer func:  self.foo = " + self.foo);
+        (function() {
+            console.log("inner func:  this.foo = " + this.foo);
+            console.log("inner func:  self.foo = " + self.foo);
+        }());
+    }
+};
+
+myObject.func();
+```
