@@ -149,3 +149,123 @@ whatismyscope()();
 //prints "I am a just a local"
 ```
 In this example, the func() is defined in the scope of whatismyscope(). The JS engine will resolve variable scope by looking at the current scope which is the function scope held by the function func(). It is not declared in the scope of func() so it moves up to the outer scope which is the scope of whatismyscope() and here it makes a stop since it finds a identifier match. So scope will be resolved to the value of "I am just a local".
+
+## Closure
+
+**How are closures created?**
+
+A closure is an inner function which has access to the variables of its outer function with the help of lexical scoping.
+
+**What is lexical scoping?**
+
+Lexical scoping is when variables which are defined in the global scope are visible throughout the JS program, whereas variables declared inside a function is only visible to the code inside of that function.
+
+In closure, the inner function has three scopes: it has access to its own scope; it has access to the variables defined in the outer scope and it has access to the variables which are defined globally.
+
+In addition to having access to the outer function's variables, it can also access the outer function's parameters.
+
+Example:
+
+```js
+function greeting(firstName) {
+  const x = "Hi, my name is ";
+
+  return function(lastName) {
+    return x + " " + firstName + " " + lastName;
+  }
+}
+
+const greet = greeting("Michael");
+greet("Jackson");
+```
+
+**One key feature of closure is that it still holds reference to the variable of the outer function even after the inner function is returned.**
+
+One of the use cases of closure is having a global counter:
+
+Consider this following example:
+
+```js
+const updateClickCount = (function() {
+  var counter = 0;
+
+  return function() {
+    ++counter;
+    document.getElementById("spnCount").innerHTML = counter;
+  }
+})();
+
+<button onclick="updateClickCount()">click me</button>
+<div> you have clicked
+  <span id="spnCount"> 0 </span> times!
+</div>
+```
+## Object Oriented Programming
+
+**How do we create an object in JavaScript using a constructor function?**
+
+```js
+function Car() {
+
+}
+
+Car()
+//returns undefined
+
+new Car()
+//returns an empty object
+```
+
+Sample constructor function:
+
+```js
+function User(name, email) {
+  this.name = name;
+  this.email = email;
+  this.getInfo = function() {
+    return this.name + " - " + this.email;
+  }
+}
+
+new User("ahamed", "ahamed@usa.com");
+// returns { name: "ahamed", email: "ahamed@usa.com", getInfo: function() {} }
+
+//We refer to the object in side the constructor method using the keyword this.
+```
+
+**Why do we need prototype functions?**
+
+If we have a constructor method which adds one of the property value being a function like the example above, every time an object gets created, a new function is declared and the browser allocates memory for it. Imagine, we are creating a million objects,  oh no!
+
+It can be checked by the following:
+```js
+const user1 = new User("ahamed", "ahamed@usa.com");
+const user2 = new User("aanaz", "anaz@usa.com");
+
+user1.getInfo === user2.getInfo;
+//returns false
+```
+So JavaScript offers something called Prototype.
+
+## Prototype
+
+A prototype is a JS object which allows us to store properties and methods so that out JS objects can inherit from it.
+
+**How do you create a prototype function?**
+
+```js
+function User(name, email) {
+  this.name = name;
+  this.email = email;
+}
+
+User.prototype.getInfo = function() {
+  return this.name + " - " + this.email;
+}
+
+const user1 = new User("ahamed", "ahamed@usa.com");
+user1.getInfo();
+//prints "ahamed - ahamed@usa.com"
+```
+
+With the help of prototype object, we have avoided the possibility of declaring new functions for every object that is created using the constructor.

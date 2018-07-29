@@ -54,4 +54,29 @@ function second() {
 
 second();
 ```
-16.
+Follow up: Is the above example a closure?
+16. What is the difference between for in and for of loop constructs?
+17. What is hoisting?
+18. What are some ways that we can create objects in JavaScript?
+19. What is the strict mode in JavaScript?
+  Follow up: What is the value of this when running a JS file without strict mode?
+20. What is the expected output of the following code?
+
+```js
+function Car() {
+
+}
+
+Car()
+
+new Car()
+```
+Follow up: What is the name of this special function in JavaScript? What is its purpose?
+21. What is the difference between function declaration and function expression?
+Follow up: Give an example.
+22. What is an IIFE?
+23. Why do functions considered as *first-class* citizens in JavaScript?
+24. What is a prototype in JavaScript?
+Follow up: How do you create a prototype method in JavaScript?
+25. What are some ES6 features you like to use?
+26.
