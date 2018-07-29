@@ -269,3 +269,26 @@ user1.getInfo();
 ```
 
 With the help of prototype object, we have avoided the possibility of declaring new functions for every object that is created using the constructor.
+
+## Class
+
+Class is a ES6 feature introduced to JavaScript to encase both the functionality and attributes produced from a constructor in one spot.
+
+For example,
+
+```js
+class User() {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+
+  getInfo() {
+    return this.name + " - " + this.email;
+  }
+}
+
+const user1 = new User("ahamed", "ahamed@usa.com");
+user1.getInfo();
+//prints "ahamed - ahamed@usa.com"
+```

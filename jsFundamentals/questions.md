@@ -79,4 +79,4 @@ Follow up: Give an example.
 24. What is a prototype in JavaScript?
 Follow up: How do you create a prototype method in JavaScript?
 25. What are some ES6 features you like to use?
-26.
+26. What is the difference between the keywords new and create in terms of instantiating new objects?
