@@ -143,3 +143,19 @@ var myObject = {
 
 myObject.func();
 ```
+30. What is prototypical inheritance?
+Follow up: what is the prototype property? Give an example of prototypical inheritance.
+31. Walk me through how prototypical inheritance is implemented in JS arrays:
+
+```js
+Array.prototype
+```
+32. How do you access the prototype property of an object in the browser?
+33. Write any two methods that will be returned by the following code:
+
+```js
+[].__proto__
+```
+34. Why do we use prototypical inheritance?
+Hint: Think in terms of the browser memory.
+35. Modify the JS Array's prototype property to include a method called ```uniq```. This method takes an array and returns only the unique elements in the array. Please feel free to use your browser console.

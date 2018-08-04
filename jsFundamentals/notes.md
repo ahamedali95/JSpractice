@@ -377,3 +377,44 @@ console.log(result);
 ```
 
 In this example, an array is an object and a method is called on this object. And this method takes in a callback function and this callback function is not called as a property on an object. So whenever the callback function is invoked, it will print out the global object.
+
+### Prototypical Inheritance
+
+Prototypical inheritance is a way for us to implement inheritance using the **prototype property**.
+
+#### What is the prototype property?
+
+The prototype property is a property of a JS object allows us to add methods and properties so that newly created JS objects can able inherit from it.
+
+Every browser has a **_proto_** property that allows for us to see what are the methods of an object.
+
+#### How do you access the prototype property of an object?
+
+```js
+[]._proto_
+//returns all the methods we can call on this object
+```
+
+#### Creating Arrays in JS
+
+We used to create arrays literally, meaning we used the square bracket notation like this: ```[1,2,3]``` but there is another way to create arrays in JS which is using the Array constructor method. **Remember, arrays are objects in JS so that means it must have a constructor method**. It can be created as such: ```new Array(1,2,3)```. We saw that every object must have a prototype property so that means the Array constructor(methods are objects in JS) must also have a prototype property. To modify the properties of this prototype object, we can write something of this nature:
+
+```js
+Array.prototype.uniq = function() {
+  let newArr = [];
+
+  this.forEach(ele => {
+    if(newArr.indexOf(ele) === -1) {
+      newArr.push(ele);
+    }
+  });
+
+  return newArr;
+}
+```
+
+**What?!** We just modified the prototype property of the Array object to include a method called ```uniq``` which can be used on an instance of an array and get an array with unique elements.
+
+### Prototype chain
+
+Prototype chain is this idea that a newly created instance will have a reference to its parent - the constructor. So that the prototype property of this new instance will have all properties and methods coming from its parent. It's parent being the constructor and its prototype - Object.prototype
