@@ -417,4 +417,34 @@ Array.prototype.uniq = function() {
 
 ### Prototype chain
 
-Prototype chain is this idea that a newly created instance will have a reference to its parent - the constructor. So that the prototype property of this new instance will have all properties and methods coming from its parent. It's parent being the constructor and its prototype - Object.prototype
+Prototype chain is this idea that a newly created instance will have a reference to its parent - the constructor. So that new instance will have all properties and methods from its parent. It's parent being the constructor and its prototype - Object.prototype
+
+Basically, a newly created JS object will have a reference to the prototype object of the constructor function which helped to created this object. So our newly created object can inherit all the properties and methods defined inside this prototype object. During function resolution, when the JS engine first sees the method call on an object, it will start looking at the current object to find the method. If it is not found, then it will start moving up the prototype chain and look at the constructor functions's prototype object. It will start moving up until it finds the method or until reaches the Object.prototype which is the global object.
+
+**Demonstration of JS inheritance and prototype chaining:**
+
+```js
+function User(name, email) {
+  this.name = name;
+  this.email = email;
+}
+
+User.prototype.sayHello = function() {
+  return "My name is " + this.name;
+}
+
+const ahamed = new User("ahamed", "ahamed@usa.com");
+// ahamed.__proto__ == User.prototype
+
+function Student(name, email, studentId) {
+  this.name = name;
+  this.email = email;
+  this.studentId = studentId;
+  this.constructor = Student
+}
+
+Student.prototype = new User()
+const abbas = new Student("ahamed", "ahamed@usa.com", 8)
+```
+
+Here, we have a User model and Student model. A student is indeed a user so it must posses all properties and methods of the User model. To inherit all the properties and methods from the User model, we have to say ```Student.prototype = new User()```.

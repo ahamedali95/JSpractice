@@ -160,8 +160,10 @@ Array.prototype
 34. Why do we use prototypical inheritance?
 Hint: Think in terms of the browser memory.
 35. Modify the JS Array's prototype property to include a method called ```uniq```. This method takes an array and returns only the unique elements in the array. Please feel free to use your browser console.
+36. What is prototype chaining?
 
 
+/********************************************************/
 Basic
 1. What is the difference between var and let?
 2. What is the DOM
