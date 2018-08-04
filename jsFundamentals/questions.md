@@ -143,6 +143,7 @@ var myObject = {
 
 myObject.func();
 ```
+
 30. What is prototypical inheritance?
 Follow up: what is the prototype property? Give an example of prototypical inheritance.
 31. Walk me through how prototypical inheritance is implemented in JS arrays:
@@ -159,3 +160,31 @@ Array.prototype
 34. Why do we use prototypical inheritance?
 Hint: Think in terms of the browser memory.
 35. Modify the JS Array's prototype property to include a method called ```uniq```. This method takes an array and returns only the unique elements in the array. Please feel free to use your browser console.
+
+
+Basic
+1. What is the difference between var and let?
+2. What is the DOM
+3. What is a primitive datatype?
+4. What are the six primitive data types?
+    1. String, number, boolean, null, undefined, symbol
+5. What is the difference between null and undefined?
+6.  What is the difference between == and === ?
+Intermediate
+7. What is a closure and when would you want to use it?
+8. Describe bubbling and capturing
+9. Describe Hoisting.
+10. What is the difference between bind and call/apply?
+11. How is this used in functions?
+Advanced
+12. How do you use __proto__?
+13. Describe prototypical inheritance.
+14. What is a higher order function?
+    1. A function that take functions as an argument or returns them.
+15. Describe declarative programming
+16. Describe imperative programming
+17. What is a promise?
+18. How are promises used?
+19. Why is event delegation useful?
+20. Describe what happens when you enter a website into your address bar.
+>>>>>>> c0905554f583434fde3ea3cbd26e4cb7db4f319b
