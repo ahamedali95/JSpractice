@@ -161,9 +161,57 @@ Array.prototype
 Hint: Think in terms of the browser memory.
 35. Modify the JS Array's prototype property to include a method called ```uniq```. This method takes an array and returns only the unique elements in the array. Please feel free to use your browser console.
 36. What is prototype chaining?
+37. What is the expected output of running the following program:
 
+```js
+function User(name, email) {
+  this.name = name;
+  this.email = email;
+}
 
-/********************************************************/
+User.prototype.sayHello = function() {
+  return "My name is " + this.name;
+}
+
+const daniel = new User("Daniel", "daniel123@usa.com");
+//__proto__ holds the reference to the prototype property of the constructor function which helped to create out object.
+daniel.__proto__ == User.prototype;
+daniel.sayHello();
+
+function Student(name, email, studentId) {
+  this.name = name;
+  this.email = email;
+  this.studentId = studentId;
+  this.constructor = Student
+}
+
+Student.prototype = new User();
+const ahamed = new Student("ahamed", "ahamed@usa.com", 8)
+ahamed.sayHello();
+```
+
+38. What is the expected output of running the following program:
+
+```JS
+function sayMyName() {
+  return "My name is " + this.name;
+}
+
+sayMyName();
+
+const joe = {
+  name: "Joe",
+  sayMyName: sayMyName
+};
+
+joe.sayMyName();
+```
+
+39. What is the difference between ```apply``` and ```call```.
+Follow up: Give an example
+40. 
+
+**********************************************************
 Basic
 1. What is the difference between var and let?
 2. What is the DOM
@@ -189,4 +237,3 @@ Advanced
 18. How are promises used?
 19. Why is event delegation useful?
 20. Describe what happens when you enter a website into your address bar.
->>>>>>> c0905554f583434fde3ea3cbd26e4cb7db4f319b

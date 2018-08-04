@@ -445,6 +445,51 @@ function Student(name, email, studentId) {
 
 Student.prototype = new User()
 const abbas = new Student("ahamed", "ahamed@usa.com", 8)
+abbas.sayHello()
+//returns "My name is Ahamed"
 ```
 
-Here, we have a User model and Student model. A student is indeed a user so it must posses all properties and methods of the User model. To inherit all the properties and methods from the User model, we have to say ```Student.prototype = new User()```.
+Here, we have a User model and Student model. A student is indeed a user so it must posses all properties and methods of the User model. To inherit all the properties and methods from the User model, we have to say ```Student.prototype = new User()```. Indeed, any object that uses the Student () constructor will inherit all the Student.prototype properties and methods and all the properties and methods from the User’s prototype, which is User.prototype. This is the principal manner in which inheritance is implemented in JavaScript and the integral role the prototype chain has in the process.
+
+### Apply, Call, Bind
+
+In JS, we have seen that the value of ```this``` changes depending upon where it is used.
+
+JS allows us to set explicit value for ```this```. That is where methods - ```apply``` and ```call``` plays a huge role. 
+
+For example,
+
+```js
+function greet() {
+  return "My name is " + this.name;
+}
+
+greet();
+//returns "My name is undefined"
+
+const ahamed = { name: "ahamed" };
+
+greet.apply(ahamed);
+//returns "My name is Ahamed"
+```
+
+In the above example, we are invoking a function called ```greet``` and the return value for ```this``` is undefined since ```this``` refers to the window object. Then, we are using ```apply``` method on the greet function(all functions in JS are objects so it can have methods) and passed in the object ```ahamed```. Here, we are setting explicit value for ```this,``` so it gets the value of ```this``` from the object that is passed.
+
+### Apply vs Call
+
+The difference between apply and call is that ```Apply``` takes two arguments - object & array where the arguments for the function is grouped in an array format whereas ```Call``` takes multiple arguments - object, and arguments... where the arguments are given using comma separated values.
+
+For example,
+
+```js
+function greet(consumer1, consumer2) {
+  return this.message + ", " + consumer1 + " and " + consumer2;
+}
+
+const message = { message: "Good morning" };
+
+greet.apply(message, ["ahamed", "abbas"]);
+//returns "Good morning, ahamed and abbas"
+greet.call(message, "ahamed", "abbas");
+//returns "Good morning, ahamed and abbas"
+```
