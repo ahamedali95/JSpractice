@@ -551,17 +551,70 @@ In **Pass by Reference**, Function is called by directly passing the reference/a
 
 Functional Programming is a programming paradigm that allows us to build software by composing pure functions, avoiding shared state, mutable data and side-effects. Functional Programming is declarative - a programming paradigm where your only express what you wanted to do, rather than listing out commands to in order to solve a problem.
 
-To understand function programming, we need to understand the following:
+Function programming concerns with:
 
-- Pure function
-- Function composition
+- Pure Function(Immutability & Side effects)
+- Function Composition
+- Shared State
 
 **What is a pure function?**
+
 A pure function is a function that
 - returns the same output for the same input.
 - does not modify the variables defined in the outer scope.
+- does not affect the variable passed by reference.
 
+#### Immutability
+
+Since functional programming concerns with immutability - data cannot be changed, we have to make copies of data within the function.
+
+For example,
+```js
+const obj = {
+  num: 2
+};
+
+function multiplyByTwo(obj) {
+  const newObj = Object.assign({}, obj)
+  //or {...obj}
+  newObj.num = newObj.num * 2;
+  return newObj;
+}
+
+multiplyByTwo(obj);
+//returns {num: 4}
+obj
+//returns {num: 2}
+```
+
+Similarly, we want to copy an array inside an function using the ```spread``` operator like this:
+
+```js
+const arr = [1,2,3];
+
+function addAnElement(arr) {
+  return newArr.concat(100);
+}
+
+addAnElement(arr);
+//returns [1,2,3,100]
+arr
+//returns [1,2,3]
+```
+
+Other functions that do not mutate data are: ```map```, ```filter``` and ```reduce```
 
 #### Higher Order Functions
 
 A higher order function is a function that takes a function as an argument or returns a function as a return value, or both.
+
+**Why are higher order functions useful?**
+
+
+#### Map
+
+Map returns an array with results of applying the callback function on each element of the calling array.
+
+```js
+
+```

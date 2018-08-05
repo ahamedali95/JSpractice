@@ -230,6 +230,7 @@ Follow up: Rewrite the ```whatIsIt``` function without using ```bind``` but stil
 42. What is the difference between pass by value and pass by reference?
 Follow up: What data types are passed by value? What are not?
 43. What is functional programming?
+Follow up: What is a pure function in JS? What is immutability? What are some ways we can enforce immutability in arrays and objects?
 44. What is a higher-order function?
 Follow up: Why is it used?
 
