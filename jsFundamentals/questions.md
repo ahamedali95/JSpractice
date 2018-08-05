@@ -234,8 +234,39 @@ Follow up: What is a pure function in JS? What is immutability? What are some wa
 44. What is a higher-order function?
 Follow up: Why is it used?
 45. What is the difference between synchronous and asynchronous execution?
-46. What is AJAX?
-47. 
+46. What is the expected output of running the following code:
+
+```js
+function scheduler() {
+  console.log("I am the scheduler");
+
+  setTimeout(function() {
+    console.log("ring! ring! ring!")
+  }, 2000);
+
+  console.log("not awake!")
+}
+
+scheduler();
+```
+
+```js
+function scheduler() {
+  console.log("I am the scheduler");
+
+  setTimeout(function() {
+    console.log("ring! ring! ring!")
+  }, 0);
+
+  console.log("not awake!")
+}
+
+scheduler();
+```
+
+47. What is AJAX?
+48. What is a promise?
+
 
 **********************************************************
 Basic

@@ -648,3 +648,19 @@ AJAX, also known as Asynchronous JavaScript and XML, uses a combination of
 - JavaScript and HTML DOM (to display or use the data)
 
 AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.
+
+### Promises
+
+### DOM
+
+The DOM, also known as the Document Object Model represents the *current view* of the browser and can be manipulated without reloading a page, whereas the HTML is text in a file first used to display the page. Any change we make on the DOM affect the DOM only, not the HTML by doing so, we can change the appearance of the website in the browser.
+
+## Selectors
+
+| Selector name                   | Return shape   | Return type    | Live? | Reference             | forEach? |
+| ------------------------------- | -------------- | -------------- | ----- | --------------------- | -------- |
+| `node.getElementById()`         | Single element | Element        | N/A   | https://goo.gl/8cHGoy | N/A      |
+| `node.getElementsByClassName()` | Collection     | HTMLCollection | Yes   | https://goo.gl/qcAhcp | No       |
+| `node.getElementsByTagName()`   | Collection     | HTMLCollection | Yes   | https://goo.gl/QHozSh | No       |
+| `node.querySelector()`          | Single element | Element        | N/A   | https://goo.gl/6Pqbcc | N/A      |
+| `node.querySelectorAll()`       | Collection     | NodeList       | Node  | https://goo.gl/vTfXza | Yes      |
