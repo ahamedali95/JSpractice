@@ -618,3 +618,25 @@ In Synchronous programs, let say we have two lines of code(L1 followed by L2), L
 In Asynchronous programs, let say we have two lines of code(L1 followed by L2), line L2 schedules some task to be run in the future, but L1 starts executing before that task completes. For example, let say you are cooking a toast and then you set a timer for it to be ready. Then you move on to clean the kitchen. After the toast has finished, you take the toast and serve it to people.
 
 #### Asynchronous Execution and Callbacks
+
+The ```setTimeout``` function is a great example to schedule a task in the future.
+
+```js
+function scheduler() {
+  console.log("I am the scheduler");
+
+  setTimeout(function() {
+    console.log("ring! ring! ring!")
+  }, 2000);
+
+  console.log("not awake!")
+}
+
+scheduler();
+//prints
+// "I am the scheduler"
+// "not awake!"
+// "ring! ring! ring!"
+```
+
+In the example above, the setTimeout function schedules a task to be performed in the future(2 seconds after execution the function). The setTimeout function takes a callback function which will be called once the task is completed. 
