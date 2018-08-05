@@ -639,4 +639,12 @@ scheduler();
 // "ring! ring! ring!"
 ```
 
-In the example above, the setTimeout function schedules a task to be performed in the future(2 seconds after execution the function). The setTimeout function takes a callback function which will be called once the task is completed. 
+In the example above, the setTimeout function schedules a task to be performed in the future(2 seconds after executing the function). The setTimeout function takes a callback function which will be called once the task is completed.
+
+**What is AJAX?**
+
+AJAX, also known as Asynchronous JavaScript and XML, uses a combination of
+- A browser built-in XMLHttpRequest object (to request data from a web server)
+- JavaScript and HTML DOM (to display or use the data)
+
+AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.
