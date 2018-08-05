@@ -606,15 +606,7 @@ Other functions that do not mutate data are: ```map```, ```filter``` and ```redu
 
 #### Higher Order Functions
 
-A higher order function is a function that takes a function as an argument or returns a function as a return value, or both.
+A higher order function is a function that takes a function as an argument or returns a function as a return value, or both. Higher order functions help us to write declarative programs.
 
 **Why are higher order functions useful?**
-
-
-#### Map
-
-Map returns an array with results of applying the callback function on each element of the calling array.
-
-```js
-
-```
+Higher order function plays a huge role in functional programming since functional programming concerns with immutability. Higher order function like map, filter, and reduce does not modify the calling array. It also help us to write declarative programs.
