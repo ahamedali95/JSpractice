@@ -233,7 +233,8 @@ Follow up: What data types are passed by value? What are not?
 Follow up: What is a pure function in JS? What is immutability? What are some ways we can enforce immutability in arrays and objects?
 44. What is a higher-order function?
 Follow up: Why is it used?
-
+45. What is the difference between synchronous and asynchronous execution?
+46. 
 
 **********************************************************
 Basic

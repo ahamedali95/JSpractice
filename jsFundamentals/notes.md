@@ -610,3 +610,11 @@ A higher order function is a function that takes a function as an argument or re
 
 **Why are higher order functions useful?**
 Higher order function plays a huge role in functional programming since functional programming concerns with immutability. Higher order function like map, filter, and reduce does not modify the calling array. It also help us to write declarative programs.
+
+### Synchronous vs Asynchronous Execution  
+
+In Synchronous programs, let say we have two lines of code(L1 followed by L2), L2 cannot start executing until L2 finish executing. For example, lets say you are in a long queue to buy a train ticket, you cannot buy the train ticket until every person before you finishes buying their ticket. Similarly, people behind you cannot buy train tickets until you have finished buying the train ticket.
+
+In Asynchronous programs, let say we have two lines of code(L1 followed by L2), line L2 schedules some task to be run in the future, but L1 starts executing before that task completes. For example, let say you are cooking a toast and then you set a timer for it to be ready. Then you move on to clean the kitchen. After the toast has finished, you take the toast and serve it to people.
+
+#### Asynchronous Execution and Callbacks
