@@ -209,7 +209,30 @@ joe.sayMyName();
 
 39. What is the difference between ```apply``` and ```call```.
 Follow up: Give an example
-40. 
+40. What is the expected output of running the following code:
+
+```js
+const fruit = {
+  name: "Jackfruit",
+  getFruitName: function() {
+    (function whatIsIt() {
+       console.log(this);
+    }).bind(this)();
+  }
+}
+
+// person.sayHello();
+fruit.getFruitName();
+```
+Follow up: Rewrite the ```whatIsIt``` function without using ```bind``` but still bounding the value of ```this``` to the value that is passed in.
+
+41. REPEATED QUESTION: Why do functions considered as *first-class* citizens in JavaScript?
+42. What is the difference between pass by value and pass by reference?
+Follow up: What data types are passed by value? What are not?
+43. What is functional programming?
+44. What is a higher-order function?
+Follow up: Why is it used?
+
 
 **********************************************************
 Basic

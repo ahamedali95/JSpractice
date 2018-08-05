@@ -455,7 +455,7 @@ Here, we have a User model and Student model. A student is indeed a user so it m
 
 In JS, we have seen that the value of ```this``` changes depending upon where it is used.
 
-JS allows us to set explicit value for ```this```. That is where methods - ```apply``` and ```call``` plays a huge role. 
+JS allows us to set explicit value for ```this```. That is where methods - ```apply``` and ```call``` plays a huge role.
 
 For example,
 
@@ -475,7 +475,7 @@ greet.apply(ahamed);
 
 In the above example, we are invoking a function called ```greet``` and the return value for ```this``` is undefined since ```this``` refers to the window object. Then, we are using ```apply``` method on the greet function(all functions in JS are objects so it can have methods) and passed in the object ```ahamed```. Here, we are setting explicit value for ```this,``` so it gets the value of ```this``` from the object that is passed.
 
-### Apply vs Call
+#### Apply vs Call
 
 The difference between apply and call is that ```Apply``` takes two arguments - object & array where the arguments for the function is grouped in an array format whereas ```Call``` takes multiple arguments - object, and arguments... where the arguments are given using comma separated values.
 
@@ -493,3 +493,75 @@ greet.apply(message, ["ahamed", "abbas"]);
 greet.call(message, "ahamed", "abbas");
 //returns "Good morning, ahamed and abbas"
 ```
+
+#### Bind
+
+In ```apply``` and ```call,``` we set an explicit value for ```this``` and immediately invoked the function. Bind works very similar to these two methods but the difference is that it allows us to execute the function at a later time. We can do so like the following:
+
+```js
+function greet() {
+  return "My name is " + this.name;
+}
+
+const ahamed = { name: "ahamed" };
+
+const func = greet.bind(ahamed);
+func();
+//returns "My name is ahamed"
+```
+
+Moreover, **the bind() method creates a new function instance whose this value is bound to the value that was passed into bind().**
+
+This place a big role in when this is referenced inside the function where we want the value of ```this``` to equal the object this function resides in.
+
+For example,
+
+```js
+const fruit = {
+  name: "Jackfruit",
+  getFruitName: function() {
+    (function whatIsIt() {
+       console.log(this);
+    }).bind(this)();
+  }
+}
+
+// person.sayHello();
+fruit.getFruitName();
+//prints fruit {}
+```
+
+### Functional Programming
+
+**What are functions in JS considered to be first-class citizens**?
+
+Functions are *first-class* citizens in JS they can treated as data. It has four abilities:
+- They can be stored in a data structure
+- They can be passed as an argument to a function
+- They can be the return value of a function
+- They can be assigned to a variable
+
+**What is the difference between passed by value vs passed by reference?**
+
+In **pass by value**, function is called by directly passing the value of the variable as the argument. Changing the argument inside the function doesn’t affect the variable passed from outside the function. In JS, all primitive data types are passed by value.
+
+In **Pass by Reference**, Function is called by directly passing the reference/address of the variable as the argument. Changing the argument inside the function affect the variable passed from outside the function.
+
+### What is functional programming?
+
+Functional Programming is a programming paradigm that allows us to build software by composing pure functions, avoiding shared state, mutable data and side-effects. Functional Programming is declarative - a programming paradigm where your only express what you wanted to do, rather than listing out commands to in order to solve a problem.
+
+To understand function programming, we need to understand the following:
+
+- Pure function
+- Function composition
+
+**What is a pure function?**
+A pure function is a function that
+- returns the same output for the same input.
+- does not modify the variables defined in the outer scope.
+
+
+#### Higher Order Functions
+
+A higher order function is a function that takes a function as an argument or returns a function as a return value, or both.
