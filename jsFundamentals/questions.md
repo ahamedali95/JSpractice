@@ -236,12 +236,16 @@ Follow up: Why is it used?
 45. What is the DOM?
 46. What is the difference between pessimistic rendering and optimistic rending?
 47. Why do we use event delegation?
+Event delegation helps us to optimize event handling. Lets say we have a collection of DOM elements and we wanted to listen for an event on any of these elements, instead of adding an event listener to each one of them, we can add a single event listener to its ancestor. Thus, we can listen for similar action on many elements.
 48. What is the difference between bubbling and capturing?
+There are two ways of event propagation in the HTML DOM, bubbling and capturing.
+
+Event propagation is a way of defining the element order when an event occurs. If you have a <p> element inside a <div> element, and the user clicks on the <p> element, which element's "click" event should be handled first?
+
+In bubbling the inner most element's event is handled first and then the outer: the <p> element's click event is handled first, then the <div> element's click event.
+
+In capturing the outer most element's event is handled first and then the inner: the <div> element's click event will be handled first, then the <p> element's click event.
 49. What is the expected output of the following code:
-
-```js
-
-```
 
 ```html
 <ul id="list">
@@ -306,7 +310,7 @@ scheduler();
 ```
 
 ```js
-for(let i = 0; i < 3; i++) {
+for(var i = 0; i < 3; i++) {
   setTimeout(function() {
     console.log(i);
   }, 2000);
