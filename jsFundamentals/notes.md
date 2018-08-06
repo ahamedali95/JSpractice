@@ -664,3 +664,18 @@ The DOM, also known as the Document Object Model represents the *current view* o
 | `node.getElementsByTagName()`   | Collection     | HTMLCollection | Yes   | https://goo.gl/QHozSh | No       |
 | `node.querySelector()`          | Single element | Element        | N/A   | https://goo.gl/6Pqbcc | N/A      |
 | `node.querySelectorAll()`       | Collection     | NodeList       | Node  | https://goo.gl/vTfXza | Yes      |
+
+#### Pessimistic Rendering and Optimistic Rending
+
+Pessimistic rendering is a technique where the content of the page is changed only after a successful or failure response from a server. The flow of this rendering process might look something like:
+- A user enters a comment and clicks post
+- The front-end makes a POST request to the server along with the user's post
+- The server process that request and sends back a response which contains the content or a failure message
+- Then the front-end renders the failure message or the content
+
+Optimistic rendering is a technique where the content of the page is changed even before a successful or failure message from a server. The flow of this rendering process might look something like:
+- A user enters a comments and clicks post.
+- The front-end renders the comment
+- The front-end makes a POST request to the server along with the user's post
+- The server process that request and sends back a response which contains the content or a failure message
+- In case of failure, the front-end renders an error

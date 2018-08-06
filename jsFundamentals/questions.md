@@ -144,6 +144,169 @@ var myObject = {
 myObject.func();
 ```
 
+30. What is prototypical inheritance?
+Follow up: what is the prototype property? Give an example of prototypical inheritance.
+31. Walk me through how prototypical inheritance is implemented in JS arrays:
+
+```js
+Array.prototype
+```
+32. How do you access the prototype property of an object in the browser?
+33. Write any two methods that will be returned by the following code:
+
+```js
+[].__proto__
+```
+34. Why do we use prototypical inheritance?
+Hint: Think in terms of the browser memory.
+35. Modify the JS Array's prototype property to include a method called ```uniq```. This method takes an array and returns only the unique elements in the array. Please feel free to use your browser console.
+36. What is prototype chaining?
+37. What is the expected output of running the following program:
+
+```js
+function User(name, email) {
+  this.name = name;
+  this.email = email;
+}
+
+User.prototype.sayHello = function() {
+  return "My name is " + this.name;
+}
+
+const daniel = new User("Daniel", "daniel123@usa.com");
+//__proto__ holds the reference to the prototype property of the constructor function which helped to create out object.
+daniel.__proto__ == User.prototype;
+daniel.sayHello();
+
+function Student(name, email, studentId) {
+  this.name = name;
+  this.email = email;
+  this.studentId = studentId;
+  this.constructor = Student
+}
+
+Student.prototype = new User();
+const ahamed = new Student("ahamed", "ahamed@usa.com", 8)
+ahamed.sayHello();
+```
+
+38. What is the expected output of running the following program:
+
+```JS
+function sayMyName() {
+  return "My name is " + this.name;
+}
+
+sayMyName();
+
+const joe = {
+  name: "Joe",
+  sayMyName: sayMyName
+};
+
+joe.sayMyName();
+```
+
+39. What is the difference between ```apply``` and ```call```.
+Follow up: Give an example
+40. What is the expected output of running the following code:
+
+```js
+const fruit = {
+  name: "Jackfruit",
+  getFruitName: function() {
+    (function whatIsIt() {
+       console.log(this);
+    }).bind(this)();
+  }
+}
+
+// person.sayHello();
+fruit.getFruitName();
+```
+Follow up: Rewrite the ```whatIsIt``` function without using ```bind``` but still bounding the value of ```this``` to the value that is passed in.
+
+41. REPEATED QUESTION: Why do functions considered as *first-class* citizens in JavaScript?
+42. What is the difference between pass by value and pass by reference?
+Follow up: What data types are passed by value? What are not?
+43. What is functional programming?
+Follow up: What is a pure function in JS? What is immutability? What are some ways we can enforce immutability in arrays and objects?
+44. What is a higher-order function?
+Follow up: Why is it used?
+45. What is the DOM?
+46. What is the difference between pessimistic rendering and optimistic rending?
+47. Why do we use event delegation?
+48. What is the difference between bubbling and capturing?
+49. What is the expected output of the following code:
+
+
+```html
+<ul id="list">
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
+```
+
+```js
+document.addEventListener("DOMContentLoaded", function() {
+  const listItems = document.querySelectorAll("li");
+
+  for(var i = 0; i < listItems.length; i++) {
+  	listItems[i].addEventListener("click", function() {
+  		console.log(i + 1);
+  	});
+  }
+});
+```
+
+![javascript closure inside loops simple practical example stack overflow](https://user-images.githubusercontent.com/24445922/43697116-cb311650-990f-11e8-8795-32bf3af74b47.png)
+
+50. What is the difference between synchronous and asynchronous execution?
+51. What is the expected output of running the following code:
+
+
+```js
+function scheduler() {
+  console.log("I am the scheduler");
+
+  setTimeout(function() {
+    console.log("ring! ring! ring!")
+  }, 2000);
+
+  console.log("not awake!")
+}
+
+scheduler();
+```
+
+```js
+function scheduler() {
+  console.log("I am the scheduler");
+
+  setTimeout(function() {
+    console.log("ring! ring! ring!")
+  }, 0);
+
+  console.log("not awake!")
+}
+
+scheduler();
+```
+
+```js
+for(let i = 0; i < 3; i++) {
+  setTimeout(function() {
+    console.log(i);
+  }, 2000);
+}
+```
+
+52. What is AJAX?
+53. What is a promise?
+54. What is the difference between XMLHttpRequest and Fetch?
+
+
 
 
 **********************************************************
