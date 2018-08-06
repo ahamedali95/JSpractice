@@ -239,6 +239,9 @@ Follow up: Why is it used?
 48. What is the difference between bubbling and capturing?
 49. What is the expected output of the following code:
 
+```js
+
+```
 
 ```html
 <ul id="list">
@@ -261,6 +264,14 @@ document.addEventListener("DOMContentLoaded", function() {
 ```
 
 ![javascript closure inside loops simple practical example stack overflow](https://user-images.githubusercontent.com/24445922/43697116-cb311650-990f-11e8-8795-32bf3af74b47.png)
+
+49. (b) Given the following DOM elements, add price content($300) for each element.
+
+```HTML
+  <div class="ticket belgium"></div>
+  <div class="ticket new-york"></div>
+  <div class="ticket oman"></div>
+```
 
 50. What is the difference between synchronous and asynchronous execution?
 51. What is the expected output of running the following code:
