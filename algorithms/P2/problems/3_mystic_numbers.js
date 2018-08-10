@@ -10,7 +10,9 @@ mysticNumbers(14) => [ 8, 6, 4 ]
 *******************************************************************************/
 
 function mysticNumbers(max) {
-  [...]
+  return [...Array(max).keys()].slice(1).filter(ele => {
+    return (ele % 4 === 0 || ele % 6 === 0) && !(ele % 4 === 0 && ele % 6 === 0);
+  }).reverse();
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
