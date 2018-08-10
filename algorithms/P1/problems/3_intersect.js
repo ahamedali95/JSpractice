@@ -11,7 +11,9 @@ intersect(['a', 'b', 'c'], ['x', 'y', 'z']) => []
 *******************************************************************************/
 
 function intersect(arr1, arr2) {
-  // your code here...
+  return arr1.filter(ele => {
+    return arr2.indexOf(ele) !== -1;
+  });
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
