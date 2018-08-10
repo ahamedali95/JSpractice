@@ -11,7 +11,13 @@ arrayRange(100, 20, 3) => []
 *******************************************************************************/
 
 function arrayRange(min, max, step) {
-  // your code here...
+  let arr = [];
+
+  for(let i = min; i <= max; i += step) {
+    arr.push(i);
+  }
+
+  return arr;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
