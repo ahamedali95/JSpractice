@@ -9,7 +9,9 @@ fuzzBizz(30) => [ 2, 4, 6, 7, 8, 10, 12, 16, 18, 20, 21, 22, 24, 26 ]
 *******************************************************************************/
 
 function fuzzBizz(max) {
-  // your code here...
+  return [...Array(max).keys()].slice(1).filter(ele => {
+    return (ele % 2 === 0 || ele % 7 === 0) && !(ele % 2 === 0 && ele % 7 === 0);
+  });
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
