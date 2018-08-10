@@ -7,6 +7,7 @@ square. 4 * 4 is 16, so 16 is a perfect square. 18 is not a perfect square.
 Examples:
 
 isSquare(7) => false
+1*1;2*2;3*3;4*4;
 isSquare(15) => false
 isSquare(18) => false
 isSquare(25) => true
@@ -16,7 +17,13 @@ isSquare(16) => true
 *******************************************************************************/
 
 function isSquare(number) {
-  // your code here...
+  for(let i = 0; i < number; i++) {
+    if(i * i === number) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/

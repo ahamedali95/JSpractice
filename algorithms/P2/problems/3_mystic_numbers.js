@@ -10,7 +10,7 @@ mysticNumbers(14) => [ 8, 6, 4 ]
 *******************************************************************************/
 
 function mysticNumbers(max) {
-  // your code here...
+  [...]
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
