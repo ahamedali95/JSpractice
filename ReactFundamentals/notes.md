@@ -53,3 +53,7 @@ Components are the building-blocks of React application. Since it is follow the 
 ### Render Method
 
 Every React component must have a render() method mandatorily. It returns a single JSX element which is the representation of the native DOM component. If more than one JSX element needs to be rendered, then they can be grouped in one enclosing tag.
+
+### Props
+
+Props, also known as properties in React. They are read-only properties which must be kept pure i.e. immutable. They are passed down from parent components to child components and they are never passed from child components to parent components and this is due to the uni-directional data flow nature of React.
