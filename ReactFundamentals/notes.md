@@ -48,4 +48,8 @@ JSX stands for JavaScript and XML. This is a type of filed used by React which u
 
 ### Component
 
-Components are the building-blocks of React application. Since it is follow the component-based approach, it allows us build reusable UI components. These components split up the entire UI in to small independent and reusable pieces. Then React renders each of these components independent of each other without affecting the rest of the UI. 
+Components are the building-blocks of React application. Since it is follow the component-based approach, it allows us build reusable UI components. These components split up the entire UI in to small independent and reusable pieces. Then React renders each of these components independent of each other without affecting the rest of the UI.
+
+### Render Method
+
+Every React component must have a render() method mandatorily. It returns a single JSX element which is the representation of the native DOM component. If more than one JSX element needs to be rendered, then they can be grouped in one enclosing tag.
