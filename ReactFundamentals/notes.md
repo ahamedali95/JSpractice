@@ -30,4 +30,6 @@ Virtual DOM, also known as the Virtual Document Object Model is a virtual repres
 
 Data flows in one direction from parent to child. This makes tracking the source and destination easy.
 
- 
+#### Declarative Language
+
+React follows declarative programming so that programmers do not have to specify on how to do DOM manipulation, rather programmers provide what the page should look like and React automatically DOM manipulation for us.
