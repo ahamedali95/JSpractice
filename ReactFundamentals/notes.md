@@ -40,7 +40,7 @@ Data flows in one direction from parent to child. This makes tracking the source
 
 #### Declarative Language
 
-React follows declarative programming so that programmers do not have to specify on how to do DOM manipulation, rather programmers provide what the page should look like and React automatically DOM manipulation for us.
+React follows declarative programming so that programmers do not have to specify on how to do DOM manipulation, rather programmers provide what the page should look like and React automatically does DOM manipulation for us.
 
 ### What is JSX?
 
@@ -80,3 +80,9 @@ render() {
     );
 }
 ```
+
+### Class Component vs Functional Component
+
+Functional component are components primarily concerned with the UI of the application, not on the behavior. They are usually do not hold their state and receive props from class components. They also cannot make use of lifecycle methods.  
+
+On the other hand, class components are components primarily concerned with the behavior of the application, not necessarily the UI. They tend to hold the state of the application and have access to lifecycle methods. Inside the class components, all declared functions are accessed using the keyword ```this```.
