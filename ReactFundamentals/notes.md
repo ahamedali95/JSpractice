@@ -60,4 +60,23 @@ Props, also known as properties in React. They are read-only properties which mu
 
 ### State
 
-State are the heart of React component. State are the source of data and must be kept simple as possible. Basically, states are the objects which determine components rendering and behavior. They are mutable unlike props and create dynamic and interactive components. 
+State are the heart of React component. State are the source of data and must be kept simple as possible. Basically, states are the objects which determine components rendering and behavior. They are mutable unlike props and create dynamic and interactive components.
+
+### Arrow Functions in React
+
+Arrow functions are more of brief syntax for writing the function expression. These function help us bind the context of the components properly since in ES6 auto binding is not available by default.
+
+```js
+//General way
+render() {    
+    return(
+        <MyInput onChange={this.handleChange.bind(this) } />
+    );
+}
+//With Arrow Function
+render() {  
+    return(
+        <MyInput onChange={ (e) => this.handleOnChange(e) } />
+    );
+}
+```
