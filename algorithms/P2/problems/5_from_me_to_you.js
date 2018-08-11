@@ -9,7 +9,9 @@ fromMeToYou('love me or hate me') => 'love you or hate you'
 *******************************************************************************/
 
 function fromMeToYou(sentence) {
-  // your code here...
+  return sentence.split(" ").map(ele => {
+    return ele === "me" ? "you" : ele
+  }).join(" ");
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
