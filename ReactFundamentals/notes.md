@@ -57,3 +57,7 @@ Every React component must have a render() method mandatorily. It returns a sing
 ### Props
 
 Props, also known as properties in React. They are read-only properties which must be kept pure i.e. immutable. They are passed down from parent components to child components and they are never passed from child components to parent components and this is due to the uni-directional data flow nature of React.
+
+### State
+
+State are the heart of React component. State are the source of data and must be kept simple as possible. Basically, states are the objects which determine components rendering and behavior. They are mutable unlike props and create dynamic and interactive components. 
