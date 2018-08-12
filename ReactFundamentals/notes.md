@@ -109,6 +109,12 @@ On the other hand, class components are components primarily concerned with the 
 
 - They are best written as stateless functional components
 
+### Controlled vs Uncontrolled Component
+
+A Controlled Component is one that takes its current value through props and notifies changes through callbacks like onChange. A parent component "controls" it by handling the callback and managing its own state and passing the new values as props to the controlled component. You could also call this a "dumb component".
+
+A Uncontrolled Component is one that stores its own state internally, and you query the DOM using a ref to find its current value when you need it. This is a bit more like traditional HTML.
+
 ### Component Lifecycle
 
 There are three phases that components go through:
@@ -134,3 +140,17 @@ Events are triggered reactions to a specific action like mouse over, mouse click
 #### Synthetic Events
 
 Synthetic events are the objects which act as a cross-browser wrapper around the browser's native event. They combine the behavior of different browsers into one API. This is done to make sure that the events show consistent properties across different browsers.
+
+### Ref
+
+### Higher Order Components
+
+### Redux
+
+Redux is a predictable state container for JS applications and is used for the entire applications state management.
+
+### Principles of Redux
+
+1. Single source of truth - The state of the entire application is stored in an object within a single store. The single state tree makes it easier for us to keep track of changes over time. 
+2. State is read-only - The only way to change the state is to trigger an action. An action is a plain JS object describing the change. The action is the minimal representation of the change to data.
+3. Changes are made with pure functions: In order to specify how the state tree is transformed by actions, you need pure functions. Pure functions are those whose return value depends solely on the values of their arguments.
