@@ -108,3 +108,11 @@ On the other hand, class components are components primarily concerned with the 
 - They rarely have any internally changeable state properties
 
 - They are best written as stateless functional components
+
+### Component Lifecycle
+
+There are three phases that components go through:
+
+1. Initial Rendering Phase: This is the phase when the component is about to start its life journey and make its way to the DOM.
+2. Updating Phase: This is the phase when the component re-renders and update only when a prop or state change occurs.
+3. Unmounting Phase: This is the phase when the component ends its life journey and destroyed and removed from the DOM.
