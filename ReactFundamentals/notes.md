@@ -151,6 +151,24 @@ Redux is a predictable state container for JS applications and is used for the e
 
 ### Principles of Redux
 
-1. Single source of truth - The state of the entire application is stored in an object within a single store. The single state tree makes it easier for us to keep track of changes over time. 
-2. State is read-only - The only way to change the state is to trigger an action. An action is a plain JS object describing the change. The action is the minimal representation of the change to data.
+1. Single source of truth - The state of the entire application is stored in an object within a single store. The single state tree makes it easier for us to keep track of changes over time.
+2. State is read-only - The only way to change the state is to emit an action, an object describing what happened.
 3. Changes are made with pure functions: In order to specify how the state tree is transformed by actions, you need pure functions. Pure functions are those whose return value depends solely on the values of their arguments.
+
+### Actions
+
+Actions are JS objects that contain two attributes: type and payload. The type describes what is happening and payload contains data for the new state. It is the only way to send information from the application to the store.
+
+### Reducers
+
+Reducers are pure functions which specify how the application's state change in response to an ACTION. Reducers work by taking in the previous state and action, and then it returns a new state. It determines what sort of update needs to be done based on the type of the action, and then returns new values.
+
+#### Advantages of Redux:
+
+1. Predictability of outcome – Since there is always one source of truth, i.e. the store, there is no confusion about how to sync the current state with actions and other parts of the application.
+
+2. Maintainability – The code becomes easier to maintain with a predictable outcome and strict structure.
+
+3. Community and ecosystem – Redux has a huge community behind it which makes it even more captivating to use. A large community of talented individuals contribute to the betterment of the library and develop various applications with it.
+
+4. Organization – Redux is precise about how code should be organized, this makes the code more consistent and easier when a team works with it.
