@@ -126,3 +126,11 @@ There are three phases that components go through:
 5. componentWillUpdate() - Executed just before the rendering takes place
 6. componentDidUpdate() - Executed right after the rendering takes place
 7. componentWillUnmount() - Executed after the component is unmounted from the DOM. It is used to clear up the memory spaces.
+
+### Events
+
+Events are triggered reactions to a specific action like mouse over, mouse click, key press, etc... Handling events in React is very similar to handling events in the real DOM, expect the only difference how we specify the event. In real DOM, we specify the event name using lowercase, however in React, we use camelCase.
+
+#### Synthetic Events
+
+Synthetic events are the objects which act as a cross-browser wrapper around the browser's native event. They combine the behavior of different browsers into one API. This is done to make sure that the events show consistent properties across different browsers.
