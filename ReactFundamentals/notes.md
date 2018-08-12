@@ -116,3 +116,13 @@ There are three phases that components go through:
 1. Initial Rendering Phase: This is the phase when the component is about to start its life journey and make its way to the DOM.
 2. Updating Phase: This is the phase when the component re-renders and update only when a prop or state change occurs.
 3. Unmounting Phase: This is the phase when the component ends its life journey and destroyed and removed from the DOM.
+
+#### Component Lifecycle Methods
+
+1. componentWillMount() - executed right before the rendering takes place
+2. componentDidMount() - executed right after the rendering
+3. componentWillReceiveProps() - Executed as soon as the props are received from the parent and before another render is called
+4. shouldComponentUpdate() - Returns true or false based on certain conditions. If you want the component updated, return true. Otherwise, return false.
+5. componentWillUpdate() - Executed just before the rendering takes place
+6. componentDidUpdate() - Executed right after the rendering takes place
+7. componentWillUnmount() - Executed after the component is unmounted from the DOM. It is used to clear up the memory spaces.
