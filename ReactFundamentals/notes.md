@@ -86,3 +86,25 @@ render() {
 Functional component are components primarily concerned with the UI of the application, not on the behavior. They are usually do not hold their state and receive props from class components. They also cannot make use of lifecycle methods.  
 
 On the other hand, class components are components primarily concerned with the behavior of the application, not necessarily the UI. They tend to hold the state of the application and have access to lifecycle methods. Inside the class components, all declared functions are accessed using the keyword ```this```.
+
+
+### Container Component vs. Presentational Component
+
+
+- Container components are primarily concerned with how things work
+
+- They rarely have any HTML markup of their own, aside from a wrapping ```<div>```;
+
+- They are often stateful
+
+- They are responsible for providing data and behavior to their children (usually presentational components).
+
+- Presentational components are primarily concerned with how things look
+
+- If they are class components, they probably only contain a render method. If functional, they just return some JSX
+
+- They do not know how to alter the data that they render
+
+- They rarely have any internally changeable state properties
+
+- They are best written as stateless functional components
