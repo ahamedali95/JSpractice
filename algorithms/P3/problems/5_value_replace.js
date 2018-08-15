@@ -13,7 +13,13 @@ valueReplace(['danny', 'kurstie', 'tommy'], {kurstie: 'operations', danny: 'plac
 *******************************************************************************/
 
 function valueReplace(array, obj){
-  // your code here...
+  return array.map(ele => {
+    if(obj.hasOwnProperty(ele)) {
+      return obj[ele];
+    } else {
+      return ele;
+    }
+  });
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
