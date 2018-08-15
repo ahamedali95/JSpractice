@@ -15,19 +15,15 @@
 // power(11, 1); // => 11
 
 const findPower = (base, exp) {
-  let powerAns = 1;
-
-  for(let i = 0; i < exp; i++) {
-    powerAns *= base;
-  }
-
-  return powerAns;
+  [...Array(exp).keys()].reduce((accumulator, num) => {
+    return accumulator *= base;
+  }, 1);
 }
 
 const power = (base, exp) => {
   if(exp < 0) return 1 / findPower(base, Math.abs(exp));
 
-  if(exp === 0 || exp === 1) return base;
+  if(exp === 0) return 1;
 
   return findPower(base, exp);
 }
