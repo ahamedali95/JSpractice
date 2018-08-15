@@ -9,8 +9,8 @@ minMaxProduct([6, 3, 7, 2]) => 14
 minMaxProduct([0, 1, -5, 3, 6]) => -30
 *******************************************************************************/
 
-function minMaxProduct(array){
-  // your code here...
+function minMaxProduct(array) {
+  return Math.max.apply(null, array) * Math.min.apply(null, array);
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
