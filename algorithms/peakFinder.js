@@ -13,12 +13,10 @@
 // peakFinder([4, 6, 9, 4, 2, -7, 2, -4, 5]); //=> [2, 6, 8]
 
 
-
-
 const peakFinder = ((array) => {
   const a = [];
-  
-   array.forEach((num, index) => {
+
+  array.forEach((num, index) => {
     if(index === 0 && num > array[index + 1]) {
       a.push(index);
     } else if(index === array.length - 1 && num > array[index - 1]) {
