@@ -9,7 +9,9 @@ shortestWord('bootcamp prep') => 'prep'
 *******************************************************************************/
 
 function shortestWord(sentence) {
-  // your code here...
+  return sentence.split(" ").reduce((accumulator, word) => {
+    return !accumulator || word.length < accumulator.length ? accumulator = word : accumulator;
+  }, null);
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
