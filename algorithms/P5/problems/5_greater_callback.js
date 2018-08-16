@@ -10,7 +10,10 @@ greaterCallback(16.6, Math.floor, Math.ceil) => 17
 *******************************************************************************/
 
 function greaterCallback(num, cb1, cb2) {
-  // your code here...
+  const result1 = cb1(num);
+  const result2 = cb2(num);
+
+  return result1 > result2 ? result1 : result2;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
