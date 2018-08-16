@@ -39,7 +39,13 @@ totalNumProblems(assessments) => 29
 *******************************************************************************/
 
 function totalNumProblems(assessments) {
-  // your code here...
+  let count = 0;
+
+  for(const key in assessments) {
+    count += assessments[key].problems.length;
+  }
+
+  return count;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
