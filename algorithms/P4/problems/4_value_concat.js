@@ -13,7 +13,9 @@ valueConcat(['a', 'b', 'c'], {b: 2, c: 3})
 *******************************************************************************/
 
 function valueConcat(array, obj) {
-  // your code here...
+  return array.map(ele => {
+    return obj[ele] ? ele + obj[ele] : ele;
+  });
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
