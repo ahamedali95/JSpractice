@@ -10,7 +10,15 @@ evenSumArray([2, 8, 3, 5]) => [ 2, 20, 2, 6 ]
 *******************************************************************************/
 
 function evenSumArray(array) {
-  // your code here...
+  return array.map(ele => {
+    return evenSum(ele);
+  });
+}
+
+function evenSum(num) {
+  return [...Array(num + 1).keys()].slice(2).reduce((accumulator, num) => {
+    return num % 2 === 0 ? accumulator += num : accumulator;
+  }, 0);
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
