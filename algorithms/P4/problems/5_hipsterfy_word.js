@@ -11,7 +11,15 @@ hipsterfyWord('BACKWARDS') => 'BACKWRDS'
 *******************************************************************************/
 
 function hipsterfyWord(word) {
-  // your code here...
+  const vowels = [..."aeiouAEIOU"];
+
+  for(let i = word.length - 1; i >= 0; i--) {
+    if(vowels.indexOf(word.charAt(i)) !== -1) {
+      return word.slice(0, i) + word.slice(i + 1);
+    }
+  }
+
+  return word;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
