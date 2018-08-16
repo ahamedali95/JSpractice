@@ -23,7 +23,13 @@ myFind([3, 5, 9], isEven) => undefined
 *******************************************************************************/
 
 function myFind(arr, cb) {
-  // your code here...
+  for(let i = 0; i < arr.length; i++) {
+    if(cb(arr[i])) {
+      return arr[i];
+    }
+  }
+
+  return undefined;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
