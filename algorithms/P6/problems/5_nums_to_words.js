@@ -23,7 +23,7 @@ function numsToWords(numString) {
     8: "Eight",
     9: "Nine"
   };
-  
+
   return numString.split("").reduce((accumulator, ele) => {
     return accumulator += numToString[ele];
   }, "");
