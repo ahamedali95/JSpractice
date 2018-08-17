@@ -12,7 +12,24 @@ bestWinStreak('LLL') => 0
 *******************************************************************************/
 
 function bestWinStreak(str) {
-  // your code here...
+  let longestStreak = 0;
+  let currentStreak = 0;
+
+  for(let i = 0; i < str.length; i++) {
+    const currentChar = str[i];
+
+    if(currentChar === "W") {
+      currentStreak++;
+    } else {
+      currentStreak = 0;
+    }
+
+    if(currentStreak > longestStreak) {
+      longestStreak = currentStreak;
+    }
+  }
+
+  return longestStreak;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
