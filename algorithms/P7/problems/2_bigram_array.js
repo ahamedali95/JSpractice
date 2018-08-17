@@ -10,7 +10,14 @@ bigramArray('bigrams are very useful') => [ 'bigrams are', 'are very', 'very use
 *******************************************************************************/
 
 function bigramArray(sentence) {
-  // your code here...
+  const words = sentence.split(" ");
+  const bigrams = [];
+
+  for(let i = 0; i < words.length - 1; i++) {
+    bigrams.push(words[i] + " " + words[i+1]);
+  }
+
+  return bigrams;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
