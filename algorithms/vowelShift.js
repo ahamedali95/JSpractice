@@ -17,3 +17,20 @@
     //If it is the last index, then set the index to zero find the element that exists in that index in the collection
     //Otherwise, add one to the index and find the element that exists in that index in the collection
     //Concanate the char to the counter;
+
+function vowelShift(sentence, vowels) {
+  let nonVowelStr = "";
+
+  for(let i = 0; i < sentence.length; i++) {
+    const currentChar = sentence[i];
+    const position = vowels.indexOf(currentChar);
+
+    if(position !== -1) {
+      nonVowelStr += vowels[(position + 1) % vowels.length];
+    } else {
+      nonVowelStr += currentChar;
+    }
+  }
+
+  return nonVowelStr;
+}
