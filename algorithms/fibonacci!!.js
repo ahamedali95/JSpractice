@@ -48,7 +48,7 @@ function fibonacci(n) {
   if(n === 2) return [1, 1];
 
   const fibonacciSeq = [1, 1];
-  const i = 0;
+  let i = 0;
 
   while(fibonacciSeq.length < n) {
     fibonacciSeq.push(fibonacciSeq[i] + fibonacciSeq[i+1]);
