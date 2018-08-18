@@ -7,7 +7,7 @@
 //
 // Examples:
 //
-// isUniqueAnagram('iceeman', 'cinemae'); // => true
+// isUniqueAnagram('iceman', 'cinema'); // => true
 // isUniqueAnagram('abcd', 'adcb'); // => true
 // isUniqueAnagram('abcd', 'adxb'); // => false
 // isUniqueAnagram('abcd', 'abcdx'); // => false
@@ -23,3 +23,7 @@ function isUniqueAnagram(word1, word2) {
 
   return true;
 }
+
+// WHAT IF THERE IS REPEATED CHARACTERS IN EACH INPUT STRING?
+// For example:
+// isUniqueAnagram('iceeman', 'cinemap')
