@@ -9,3 +9,17 @@
 //
 // var arr2 = ['x', 'x', 'y', 'z', 'y', 'x']
 // tallyCount(arr2); // => { x: 'III', y: 'II', z: 'I' }
+
+function tallyCount(array) {
+  const tallyObj = {};
+
+  array.forEach(ele => {
+    if(!tallyObj[ele]) {
+      tallyObj[ele] = "I";
+    } else {
+      tallyObj[ele] += "I";
+    }
+  });
+
+  return tallyObj;
+}
