@@ -19,7 +19,6 @@ function uncompressString(str) {
   for(let i = 0; i < str.length - 1; i++) {
     const char = str[i];
     const times = str[i+1];
-
     uncompressString += char.repeat(Number(times));
   }
 
