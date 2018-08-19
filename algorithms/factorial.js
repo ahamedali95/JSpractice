@@ -8,10 +8,18 @@
 // factorial(5); // => 120
 // factorial(10); // => 3628800
 
-const factorial = (n) => {
-  if(n <= 0) return 1;
+// const factorial = (n) => {
+//   if(n < 0) return null;
+//   if(n === 0) return 1;
+//
+//   return [...Array(n + 1).keys()].slice(2).reduce((accumulator, ele) => {
+//     return accumulator *= ele;
+//   }, 1);
+// }
 
-  return [...Array(n + 1).keys()].slice(2).reduce((accumulator, ele) => {
-    return accumulator *= ele;
-  }, 1);
+function factorial(n) {
+  if(n < 0) return null;
+  if(n === 1 || n === 0) return 1;
+
+  return n * factorial(n - 1);
 }
