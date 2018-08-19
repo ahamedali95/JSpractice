@@ -31,5 +31,26 @@
 */
 
 function pascalsTriangle(depth) {
+  const rows = [[1], [1,1]];
 
+  if(depth < 0) return -1;
+  if(depth === 0) return rows[0];
+  if(depth === 1) return rows;
+
+  for(let i = 1; i < depth; i++) {
+    rows.push(findNextRow(rows[i]));
+  }
+
+  return rows;
+}
+
+function findNextRow(array) {
+  const newRow = [1];
+
+  for(let i = 0; i < array.length - 1; i++) {
+    newRow.push(array[i] + array[i+1]);
+  }
+
+  newRow.push(1);
+  return newRow;
 }
