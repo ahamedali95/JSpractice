@@ -11,13 +11,9 @@
 //intersection(arr1, arr2) => [1,3]
 
 function intersection(arr1, arr2) {
-  const intersectionSet = [];
+  const intersection = arr1.filter(ele => {
+    if(arr2.indexOf(ele) !== -1) return ele;
+  });
 
-  for(let i = 0; i < arr1.length; i++) {
-    const currentEle = arr1[i];
-
-    if(arr2.indexOf(currentEle) !== -1 && intersectionSet.indexOf(currentEle) === -1) intersectionSet.push(currentEle);
-  }
-
-  return intersectionSet;
+  return [...new Set(intersection)];
 }

@@ -11,7 +11,9 @@
 //difference(arr1, arr2) => []
 
 function difference(arr1, arr2) {
-  return arr1.filter(ele => {
+  const difference = arr1.filter(ele => {
     if(arr2.indexOf(ele) === -1) return ele;
   });
+
+  return [...new Set(difference)];
 }
