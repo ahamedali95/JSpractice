@@ -5,7 +5,7 @@ function bubbleSort(array) {
   while(!isSorted) {
     isSorted = true;
 
-    for(let i = 0; i < ; i++) {
+    for(let i = 0; i < lastUnsorted; i++) {
       const currentNum = array[i];
       const nextNum = array[i+1];
 
@@ -23,3 +23,10 @@ function swap(array, i, j) {
   array[i] = array[j];
   array[j] = temp;
 }
+
+// To calculate the complexity of the bubble sort algorithm, it is useful to
+// determine how many comparisons each loop performs. For each element in the array,
+// bubble sort does n - 1 comparisons. In big O notation, bubble sort performs O(n) comparisons.
+// Because the array contains n elements, it has an O(n) number of elements. In other words,
+// bubble sort performs O(n) operations on an O(n) number of elements, leading to a
+// total running time of O(n^2).
