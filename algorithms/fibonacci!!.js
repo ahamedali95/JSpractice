@@ -33,7 +33,7 @@
 //   if(n === 1) return fibonacciSeq.slice(0, 1);
 //   if(n === 2) return fibonacciSeq;
 //
-//   for(let i = 0; i < n - 2; i++) {
+//   for(let i = 0; i < n - 1; i++) {
 //     fibonacciSeq.push(fibonacciSeq[i] + fibonacciSeq[i+1]);
 //   }
 //
@@ -42,18 +42,26 @@
 
 
 
+// function fibonacci(n) {
+//   if(n < 1) return [];
+//   if(n === 1) return [1];
+//   if(n === 2) return [1, 1];
+//
+//   const fibonacciSeq = [1, 1];
+//   let i = 0;
+//
+//   while(fibonacciSeq.length < n) {
+//     fibonacciSeq.push(fibonacciSeq[i] + fibonacciSeq[i+1]);
+//     i++;
+//   }
+//
+//   return fibonacciSeq;
+// }
+
+
 function fibonacci(n) {
-  if(n < 1) return [];
-  if(n === 1) return [1];
-  if(n === 2) return [1, 1];
+  if(n < 1) return -1;
+  if(n === 1 || n === 2) return 1;
 
-  const fibonacciSeq = [1, 1];
-  let i = 0;
-
-  while(fibonacciSeq.length < n) {
-    fibonacciSeq.push(fibonacciSeq[i] + fibonacciSeq[i+1]);
-    i++;
-  }
-
-  return fibonacciSeq;
+  return fibonacci(n - 1) + fibonacci(n - 2)
 }
