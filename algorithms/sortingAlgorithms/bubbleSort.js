@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=6Gv8vg0kcHc
+
 function bubbleSort(array) {
   let isSorted = false;
   let lastUnsorted = array.length - 1;
