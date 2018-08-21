@@ -1,0 +1,15 @@
+pizza1 = Pizza.create(name: "Tandoori", style: "Indian", creator: "kamal", img_src: "kunju")
+pizza2 = Pizza.create(name: "Vegetable", style: "American", creator: "Ahamed", img_src: "mamu")
+pizza3 = Pizza.create(name: "Masala", style: "Tamil Nadu", creator: "Tamilians", img_src: "Vaadi pulla")
+
+ingredient1 = Ingredient.create(name: "Chicken")
+ingredient2 = Ingredient.create(name: "Cheese")
+ingredient3 = Ingredient.create(name: "Tomato Sauce")
+ingredient4 = Ingredient.create(name: "Masala")
+
+PizzaIngredient.create(pizza_id: pizza1.id, ingredient_id: ingredient1.id)
+PizzaIngredient.create(pizza_id: pizza1.id, ingredient_id: ingredient3.id)
+PizzaIngredient.create(pizza_id: pizza1.id, ingredient_id: ingredient2.id)
+PizzaIngredient.create(pizza_id: pizza2.id, ingredient_id: ingredient2.id)
+PizzaIngredient.create(pizza_id: pizza2.id, ingredient_id: ingredient3.id)
+PizzaIngredient.create(pizza_id: pizza3.id, ingredient_id: ingredient4.id)
