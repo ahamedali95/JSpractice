@@ -1,2 +1,2 @@
-<h1>Superheroes#show</h1>
-<p>Find me in app/views/superheroes/show.html.erb</p>
+<h1>Name: <%= @superhero.name %></h1>
+<h2>Superpower: <%= link_to @superhero.superpower.name, @superhero.superpower%></h2>
