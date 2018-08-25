@@ -12,27 +12,14 @@ class Artist {
     artists.push(this);
   }
 
-  retrieveTiles(songs) {
-    return songs.map(song => song.title);
-  }
-
   getSongs() {
-    return this.retrieveTiles(songs.filter(song => song.artist_id === this.id));
-  }
-
-  retrieveGenreIds(songs) {
-    return songs.map(song => song.genreId);
+    return songs.filter(song => song.artistId === this.id);
   }
 
   getGenres() {
-    this.retrieveGenreIds(this.getSongs());
+    return this.getSongs().map(song => song.genre());
   }
 }
-
-const arRahman = new Artist("AR Rahman");
-const anirudh = new Artist("Anirudh");
-
-console.log(artists);
 
 class Song {
   constructor(title, artistId, genreId) {
@@ -42,12 +29,28 @@ class Song {
     this.genreId = genreId;
     songs.push(this);
   }
+
+  genre() {
+    return genres.find(genre => genre.id === this.genreId);
+  }
+
+  artist() {
+    return artists.find(artist => artist.id === this.artistId);
+  }
 }
 
 class Genre {
   constructor(name) {
     this.name = name;
-    this.id = ++id;
+    this.id = ++genreId;
     genres.push(this);
+  }
+
+  getSongs() {
+    return songs.filter(song => song.genreId === this.id);
+  }
+
+  getArtists() {
+    return this.getSongs().map(song => song.artist());
   }
 }
