@@ -21,3 +21,17 @@ programming should have one job, one responsibility, and their services (i.e., m
 should be narrowly aligned with that responsibility. This principle goes hand in
 hand with the separation of concerns––the idea that the various responsibilities,
 or concerns, of a computer program should be separated out into discrete sections.
+
+### Encapsulation
+
+Encapsulation refers to enclosing all the functionalities of an object within
+that object so that the object’s internal workings (its methods and properties)
+are hidden from the rest of the application. This allows us to abstract or localize
+specific set of functionalities on objects.
+
+### Polymorphism
+
+Polymorphism is one of the tenets of Object Oriented Programming (OOP).
+It is the practice of designing objects to share behaviors and to be able to
+override shared behaviors with specific ones. Polymorphism takes advantage of
+inheritance in order to make this happen.
