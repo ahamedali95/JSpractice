@@ -17,13 +17,25 @@
 //   return true;
 // }
 
+// function isPangram(str) {
+//   const newStr = str.toLowerCase().split(" ").join("");
+//   const tally = {};
+//
+//   for(let i = 0; i < newStr.length; i++) {
+//     if(!(newStr[i] in tally)) tally[newStr[i]] = 1;
+//   }
+//
+//   return Object.keys(tally).length === 26;
+// }
+
 function isPangram(str) {
-  const newStr = str.toLowerCase().split(" ").join("");
-  const tally = {};
+  const uniqueCharacters = [...new Set([...str.split(" ").join("")])];
 
-  for(let i = 0; i < newStr.length; i++) {
-    if(!(newStr[i] in tally)) tally[newStr[i]] = 1;
-  }
+  return uniqueCharacters.length === 26 ? null : findMissingCharacters(uniqueCharacters);
+}
 
-  return Object.keys(tally).length === 26;
+function findMissingCharacters(arr) {
+  const alphabets = [..."abcdefghijklmnopqrstuvwxyz"];
+
+  return alphabets.filter(alphabet => arr.indexOf(alphabet) === -1).sort();
 }
