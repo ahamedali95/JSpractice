@@ -1,39 +1,8 @@
-class Tree {
-  constructor() {
-    this.root = null;
-  }
+// A binary search tree is a tree in which all the nodes follow the following properties:
+// 1. The left sub-tree of a node has a key less than or equal to its parent node's key.
+// 2. The right sub-tree of a node has a key greater than to its parent node's key.
 
-  addValue(value) {
-    const node = new Node(value);
-    if(!this.root) {
-      this.root = node;
-    } else {
-      this.root.addNode(node);
-    }
-  }
-}
-
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-
-  addNode(n) {
-    console.log(n.value);
-    if(n.value < this.value) {
-      if(!this.left) {
-        this.left = n;
-      } else {
-        this.left.addNode(n);
-      }
-    } else if(n.value > this.value){
-        if(!this.right) {
-          this.right = n;
-        } else {
-          this.right.addNode(n);
-        }
-    }
-  }
-}
+// Thus, BST divides all its subtrees in to two segments; the left sub-tree and the
+// right sub-tree and can be defined as -
+//
+// left_subtree (keys) ≤  node (key)  ≤  right_subtree (keys)
