@@ -6,3 +6,57 @@
 // right sub-tree and can be defined as -
 //
 // left_subtree (keys) ≤  node (key)  ≤  right_subtree (keys)
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+
+  addNode(node) {
+    if(node.value < this.value) {
+      if(!this.left) {
+        this.left = node;
+      } else {
+        this.left.addNode(node);
+      }
+    } else if(node.value > this.value){
+      if(!this.right) {
+        this.right = node;
+      } else {
+        this.right.addNode(node);
+      }
+    }
+  }
+
+  visit() {
+    if(this.left) this.left.visit();
+    console.log(this.value);
+    if(this.right) this.left.visit();
+  }
+
+  search(key) {
+    this.root.search(key);
+  }
+}
+
+class Tree {
+  constructor() {
+    this.root = null;
+  }
+
+  addValue(value) {
+    const newNode = new Node(value);
+
+    if(!this.root) {
+      this.root = newNode;
+    } else {
+      this.root.addNode(newNode);
+    }
+  }
+
+  traverse() {
+    this.root.visit();
+  }
+}
