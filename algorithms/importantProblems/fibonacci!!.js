@@ -25,43 +25,40 @@
     //Add them and push it to the array
 //Return the collection
 
-// function fibonacci(n) {
-//   if(n < 1) return [];
-//
-//   const fibonacciSeq = [1, 1];
-//
-//   if(n === 1) return fibonacciSeq.slice(0, 1);
-//   if(n === 2) return fibonacciSeq;
-//
-//   for(let i = 0; i < n - 1; i++) {
-//     fibonacciSeq.push(fibonacciSeq[i] + fibonacciSeq[i+1]);
-//   }
-//
-//   return fibonacciSeq;
-// }
 
+function fibonacci(num) {
+  const sequence = [1,1];
 
+  if(num < 1) return [];
+  if(num === 1) return sequence.slice(1);
+  if(num === 2) return sequence;
 
-// function fibonacci(n) {
-//   if(n < 1) return [];
-//   if(n === 1) return [1];
-//   if(n === 2) return [1, 1];
-//
-//   const fibonacciSeq = [1, 1];
-//   let i = 0;
-//
-//   while(fibonacciSeq.length < n) {
-//     fibonacciSeq.push(fibonacciSeq[i] + fibonacciSeq[i+1]);
-//     i++;
-//   }
-//
-//   return fibonacciSeq;
-// }
+  for(let i = 0; i < num - 2; i++) {
+    sequence.push(sequence[i] + sequence[i+1]);
+  }
 
+  return sequence;
+}
 
-function fibonacci(n) {
-  if(n < 1) return -1;
-  if(n === 1 || n === 2) return 1;
+function fibonacci(num) {
+  const sequence = [1,1];
+  let i = 0;
 
-  return fibonacci(n - 1) + fibonacci(n - 2)
+  if(num < 1) return [];
+  if(num === 1) return sequence.slice(1);
+  if(num === 2) return sequence;
+
+  while(sequence.length < num) {
+    sequence.push(sequence[i] + sequence[i+1])
+    i++;
+  }
+
+  return sequence;
+}
+
+function fibonacci(num) {
+  if(num < 1) return -1;
+  if(num === 2 || num === 1) return 1;
+
+  return fibonacci(num - 1) + fibonacci(num -2);
 }
