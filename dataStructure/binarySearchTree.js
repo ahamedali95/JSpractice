@@ -37,7 +37,15 @@ class Node {
   }
 
   search(key) {
-    this.root.search(key);
+    if(key === this.value) {
+      return "Found!";
+    } else if(key < this.value && !this.left) {
+      search(key);
+    } else if(key > this.value && !this.right) {
+      search(key);
+    }
+
+    return null;
   }
 }
 
@@ -58,5 +66,9 @@ class Tree {
 
   traverse() {
     this.root.visit();
+  }
+
+  search(key) {
+    return this.root.search(key);
   }
 }
