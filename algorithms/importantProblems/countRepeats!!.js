@@ -28,23 +28,53 @@
 //   return letters.length;
 // }
 
-function countRepeats(string) {
+function countRepeats(str) {
   const tally = {};
-  const repeatCount = 0;
+  let count = 0;
 
-  for(let i = 0; i < string.length; i++) {
-    const currentChar = string[i];
+  for(let i = 0; i < str.length; i++) {
+    const char = str[i];
 
-    if(currentChar in tally) {
-      tally[currentChar] = 1;
+    if(char in tally) {
+      tally[char]++;
     } else {
-      tally[currentChar]++;
+      tally[char] = 1;
     }
   }
 
-  for(const ele in tally) {
-    if(tally[ele] > 1) repeatCount++;
+  for(const key in tally) {
+    if(tally[key] > 1) count++;
   }
 
-  return repeatCount;
+  return count;
 }
+
+
+
+//
+//
+//
+//
+//
+//
+//
+// function countRepeats(string) {
+//   const tally = {};
+//   const repeatCount = 0;
+//
+//   for(let i = 0; i < string.length; i++) {
+//     const currentChar = string[i];
+//
+//     if(currentChar in tally) {
+//       tally[currentChar] = 1;
+//     } else {
+//       tally[currentChar]++;
+//     }
+//   }
+//
+//   for(const ele in tally) {
+//     if(tally[ele] > 1) repeatCount++;
+//   }
+//
+//   return repeatCount;
+// }
