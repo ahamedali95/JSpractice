@@ -11,8 +11,16 @@
 # decoded_string # => "mississippi"
 */
 
-function decode(string) {
-  return string.split("").reduce((accumulator, ele, index) => {
-    return index % 2 === 0 ? accumulator += ele.repeat(Number(string[index + 1])) : accumulator;
+function decodeString(string) {
+  return [...string].reduce((accumulator, ele, index) => {
+    return index % 2 !== 0 ? accumulator += string[index - 1].repeat(Number(ele)) : accumulator;
   }, "");
 }
+
+
+// 
+// function decode(string) {
+//   return string.split("").reduce((accumulator, ele, index) => {
+//     return index % 2 === 0 ? accumulator += ele.repeat(Number(string[index + 1])) : accumulator;
+//   }, "");
+// }
