@@ -33,7 +33,7 @@ class Node {
   visit() {
     if(this.left) this.left.visit();
     console.log(this.value);
-    if(this.right) this.left.visit();
+    if(this.right) this.right.visit();
   }
 
   search(key) {
