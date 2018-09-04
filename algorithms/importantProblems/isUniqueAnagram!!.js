@@ -12,48 +12,32 @@
 // isUniqueAnagram('abcd', 'adxb'); // => false
 // isUniqueAnagram('abcd', 'abcdx'); // => false
 
-function isUniqueAnagram(word1, word2) {
-  if(word1.length !== word2.length) return false;
-
-  for(let i = 0; i < word1.length; i++) {
-    const currentChar = word1[i];
-
-    if(word2.indexOf(currentChar) === -1) return false;
-  }
-
-  return true;
-}
-
-// WHAT IF THERE IS REPEATED CHARACTERS IN EACH INPUT STRING?
-// For example:
-// isUniqueAnagram('iceeman', 'cinemap')
-//Our program above return true for this.
 
 function isUniqueAnagram(word1, word2) {
   const tally = {};
 
   for(let i = 0; i < word1.length; i++) {
-    const char = word1[i];
+    const currentChar = word1[i];
 
-    if(char in tally) {
-      tally[char]++;
+    if(currentChar in tally) {
+      tally[currentChar]++;
     } else {
-      tally[char] = 1;
+      tally[currentChar] = 1;
     }
   }
 
   for(let i = 0; i < word2.length; i++) {
-    const char = word1[i];
+    const currentChar = word2[i];
 
-    if(char in tally) {
-      tally[char]--;
+    if(currentChar in tally) {
+      tally[currentChar]--;
     } else {
       return false;
     }
   }
 
-  for(const key in tally) {
-    if(tally[key]) return false;
+  for(const char in tally) {
+    if(tally[char]) return false;
   }
 
   return true;
