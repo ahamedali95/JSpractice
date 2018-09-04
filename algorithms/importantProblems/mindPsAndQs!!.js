@@ -10,20 +10,23 @@
 // mindPsAndQs('PPPXQPPPQ'); // => 5
 
 function mindPsAndQs(str) {
-  let longestStreak = 0;
   let currentStreak = 0;
+  let longestStreak = 0;
 
   for(let i = 0; i < str.length; i++) {
     const currentChar = str[i];
 
-    if((currentChar === "P" || currentChar === "Q") && (i !== str.length - 1)) {
+    if(currentChar === "P" || currentChar === "Q") {
       currentStreak++;
-    } else if((currentChar === "P" || currentChar === "Q") && (i === str.length - 1)) {
-      currentStreak++;
-      longestStreak = currentStreak;
     } else {
-      longestStreak = currentStreak;
-      currentStreak = 0;
+      if(currentStreak > longestStreak) {
+        longestStreak = currentStreak;
+        currentStreak = 0;
+      }
+    }
+
+    if(i === str.length - 1) {
+      if(currentStreak > longestStreak) longestStreak = currentStreak;
     }
   }
 
