@@ -17,6 +17,7 @@
 // shiftChars('bootcamp', 3); //=> 'errwfdps'
 // shiftChars('zebra', 5); //=> 'ejgwf'
 
+
 function shiftChars(word, num) {
   const alphabet = [
     'a','b','c','d','e','f','g','h','i','j','k','l','m',
@@ -26,6 +27,6 @@ function shiftChars(word, num) {
   return word.split("").map(char => {
     const position = alphabet.indexOf(char);
     const shiftBy = position + num;
-    return alphabets[shiftBy % alphabets.length];
+    return alphabets[shiftBy % 26];
   }).join("");
 }
