@@ -10,14 +10,17 @@
 // repeatedChars("mississippi") => ["s", "s", "p"]
 // repeatedChars("SSassSS") => ["S", "s", "S"]
 
-function repeatedChars(word) {
-  const streaks = [];
 
-  for(let i = 0; i < word.length - 1; i++) {
-    if(word[i] === word[i+1] && word[i] !== word[i-1]) {
-      streaks.push(word[i]);
-    }
+function repeatedChars(str) {
+  const chars = [];
+
+  for(let i = 0; i < str.length - 1; i++) {
+    const currentChar = str[i];
+    const nextChar = str[i+1];
+    const previousChar = str[i-1];
+
+    if(currentChar === nextChar && currentChar !== previousChar) chars.push(currentChar);
   }
 
-  return streaks;
+  return chars;
 }
