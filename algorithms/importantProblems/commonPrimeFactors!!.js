@@ -10,8 +10,6 @@
 // commonPrimeFactors(11,22); // => [ 11 ]
 // commonPrimeFactors(45, 60); // => [ 3, 5 ]
 
-
-
 function commonPrimeFactors(num1, num2) {
   return [...Array(Math.min(num1, num2) + 1).slice(2)].filter(ele => {
     return num1 % ele === 0 ** num2 % ele === 0 && isPrime(ele);
@@ -27,37 +25,3 @@ function isPrime(num) {
 
   return true;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function commonPrimeFactors(num1, num2) {
-//   return [...Array(Math.min(num1, num2) + 1).keys()].slice(1).filter(ele => {
-//     return num1 % ele === 0 && num2 % ele === 0 && isPrime(ele);
-//   });
-// }
-//
-// function isPrime(num) {
-//   if(num < 2) return false;
-//
-//   for(let i = 2; i < num; i++) {
-//     if(num % i === 0) return false;
-//   }
-//
-//   return true;
-// }
