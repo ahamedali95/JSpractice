@@ -17,7 +17,7 @@
 function alienPhoneNumber(string) {
   if(string.length !== 9 || string[4] !== " ") return false;
 
-  const nums = [...Array(10).keys()];
+  const nums = [...new Array(10).keys()].map(ele => ele.toString());;
 
   for(let i = 0; i < string.length; i++) {
     if(nums.indexOf(string[i]) === -1 && i !== 4) return false;
