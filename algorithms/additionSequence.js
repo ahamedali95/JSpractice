@@ -23,10 +23,10 @@
 // additionSequence(arr2, seq2); // => [ 2, 4, 4, 6, 6, 8, 8 ]
 
 
-function additionSequence(array, seq) {
-  const seqLen = seq.length;
+const additionSequence = (array, seq) => {
+  const seqLength = seq.length;
 
-  return array.map((num, index) => {
-    return num + seq[index % seqLen];
+  return array.map((ele, index) => {
+    return ele + seq[index % seqLength]
   });
 }
