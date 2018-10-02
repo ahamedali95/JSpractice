@@ -20,6 +20,7 @@
 # aliquot_sequence(7, 4) # => [7, 1, 0, 0]*/
 
 
+
 function aliquot_sequence(base, n) {
   const aliquotSequence = [base];
   let i = 0;
